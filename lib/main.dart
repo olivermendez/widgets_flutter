@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_flutter/list.dart';
+import 'package:widgets_flutter/routes/app_routes.dart';
+import 'app/widget_world.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,27 +9,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Widgets'),
-        ),
-        body: ListView.builder(
-          itemCount: listOfWidgets.length,
-          itemBuilder: (BuildContext context, int index) {
-            final name = listOfWidgets.toList(growable: false);
-            return ListTile(
-              title: Text(name[index]['name']!),
-              subtitle: Text(name[index]['status']!),
-              trailing: TextButton(
-                child: const Text("go"),
-                onPressed: () {},
-              ),
-            );
-          },
-        ),
-      ),
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      home: WidgetWordHome(),
     );
   }
 }
