@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_flutter/app/pages/login_page.dart';
+import 'package:widgets_flutter/app/pages/widget_world.dart';
 import 'package:widgets_flutter/app/widgets/body/widget_body_01.dart';
 
 import '../splash/splash_page.dart';
@@ -12,6 +14,10 @@ class AppRouter {
         return SplashPage.route();
       case WidgetBody01.routeName:
         return WidgetBody01.route();
+      case LoginPage.routeName:
+        return LoginPage.route();
+      case WidgetWordHome.routeName:
+        return WidgetWordHome.route();
 
       default:
         return _errorRoute();
@@ -20,11 +26,36 @@ class AppRouter {
 
   static Route _errorRoute() {
     return MaterialPageRoute(
-      settings: const RouteSettings(name: '/error'),
-      builder: (_) => Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.red,
-          title: const Text("Error Page"),
+        settings: const RouteSettings(name: '/error'),
+        builder: (_) => const ErrorPageNotFound());
+  }
+}
+
+class ErrorPageNotFound extends StatelessWidget {
+  const ErrorPageNotFound({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: const Text(
+          "Page not found",
+        ),
+      ),
+      body: Container(
+        color: Colors.red,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: const Center(
+          child: Text(
+            "Page no found",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
       ),
     );
