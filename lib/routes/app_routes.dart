@@ -3,6 +3,7 @@ import 'package:widgets_flutter/app/pages/login_page.dart';
 import 'package:widgets_flutter/app/pages/widget_world.dart';
 import 'package:widgets_flutter/app/widgets/body/widget_body_01.dart';
 
+import '../app/pages/with_bloc/counter_page.dart';
 import '../splash/splash_page.dart';
 
 class AppRouter {
@@ -18,6 +19,8 @@ class AppRouter {
         return LoginPage.route();
       case WidgetWordHome.routeName:
         return WidgetWordHome.route();
+      case CounterPage.routeName:
+        return CounterPage.route();
 
       default:
         return _errorRoute();

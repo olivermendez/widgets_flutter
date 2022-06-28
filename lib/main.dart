@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_flutter/app/pages/login_page.dart';
 import 'package:widgets_flutter/routes/app_routes.dart';
-import 'app/pages/widget_world.dart';
 
 void main() => runApp(MyApp());
 
