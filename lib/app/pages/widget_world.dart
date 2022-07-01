@@ -25,6 +25,7 @@ class _WidgetWordHomeState extends State<WidgetWordHome> {
         centerTitle: false,
         leading: IconButton(
           onPressed: () {
+            // ignore: avoid_print
             print("menu button");
           },
           icon: const Icon(
@@ -43,6 +44,7 @@ class _WidgetWordHomeState extends State<WidgetWordHome> {
               semanticLabel: 'search',
             ),
             onPressed: () {
+              // ignore: avoid_print
               print('Search button');
             },
           ),
@@ -52,32 +54,48 @@ class _WidgetWordHomeState extends State<WidgetWordHome> {
               semanticLabel: 'filter',
             ),
             onPressed: () {
+              // ignore: avoid_print
               print('Filter button');
             },
           ),
         ],
       ),
-      body: ListView.builder(
+      body: GridView.builder(
         itemCount: listOfWidgets.length,
-        itemBuilder: (BuildContext context, int index) {
+        itemBuilder: (context, int index) {
           final name = listOfWidgets.toList(growable: false);
-
-          return ListTile(
+          return GestureDetector(
             onTap: () {
               Navigator.pushNamed(context, name[index]['route']!);
             },
-            title: Text(name[index]['name']!),
-            subtitle: Text(
-              name[index]['status']!,
-            ),
-            trailing: TextButton(
-              child: const Text("go"),
-              onPressed: () {
-                Navigator.pushNamed(context, name[index]['route']!);
-              },
+            child: Card(
+              color: Colors.white,
+              elevation: 0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    name[index]['name']!,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
+                      //color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    name[index]['status']!,
+                  ),
+                ],
+              ),
             ),
           );
         },
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
       ),
     );
   }

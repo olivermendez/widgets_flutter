@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:widgets_flutter/app/pages/with_bloc/Counter_bloc.dart';
 
 class CounterPage extends StatefulWidget {
-  CounterPage({Key? key}) : super(key: key);
+  const CounterPage({Key? key}) : super(key: key);
 
   static const String routeName = '/counter-page';
 
   static Route route() {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
-      builder: (_) => CounterPage(),
+      builder: (_) => const CounterPage(),
     );
   }
 
@@ -31,7 +31,7 @@ class _CounterPageState extends State<CounterPage> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: ChildPageCounterPage(),
+      body: const ChildPageCounterPage(),
     );
   }
 }
@@ -74,6 +74,7 @@ class _ChildPageCounterPageState extends State<ChildPageCounterPage> {
               },
               child: const Icon(Icons.plus_one),
             ),
+            Image.asset(''),
             FloatingActionButton(
               heroTag: "btn2",
               onPressed: () {

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:widgets_flutter/app/pages/login_page.dart';
 import 'package:widgets_flutter/routes/app_routes.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
