@@ -2,6 +2,8 @@
 
 Welcome to Widgets World. Here you will find all of widgets that i've learned.
 
+![home](./assets/home.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

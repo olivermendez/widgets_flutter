@@ -7,7 +7,7 @@ class AppBarButtom1 extends StatelessWidget {
 
   static Route route() {
     return MaterialPageRoute(
-      settings: const RouteSettings(name: routeName),
+      settings: RouteSettings(name: routeName),
       builder: (_) => const AppBarButtom1(),
     );
   }
@@ -15,18 +15,28 @@ class AppBarButtom1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('title'),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        elevation: 0,
+      ),
+      body: Container(
+        alignment: Alignment.center,
+        child: const Text('Centered FAB'),
+      ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
           children: [
-            IconButton(icon: Icon(Icons.menu), onPressed: () {}),
-            Spacer(),
-            IconButton(icon: Icon(Icons.search), onPressed: () {}),
-            IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.menu), onPressed: () {}),
+            const Spacer(),
+            IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+            IconButton(icon: const Icon(Icons.more_vert), onPressed: () {}),
           ],
         ),
       ),
       floatingActionButton:
-          FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
+          FloatingActionButton(child: const Icon(Icons.add), onPressed: () {}),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

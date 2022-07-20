@@ -3,7 +3,7 @@ import 'package:widgets_flutter/app/models/components.models.dart';
 import 'package:widgets_flutter/app/pages/widgets_home.dart';
 import 'package:widgets_flutter/app/widgets/card_widget.dart';
 
-import '../widgets/appbar/appbar_widget.dart';
+import '../widgets/appbar/home_appbar.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

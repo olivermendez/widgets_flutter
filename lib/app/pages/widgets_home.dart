@@ -18,22 +18,29 @@ class _WidgetsHomeState extends State<WidgetsHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        foregroundColor: Colors.black,
+        elevation: 0,
+        //foregroundColor: Colors.black,
         title: Text(
           widget.title,
-          style: const TextStyle(color: Colors.black),
+          style: const TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.white,
+        //backgroundColor: Colors.white,
       ),
       body: ListView.builder(
           itemCount: widget.examples!.length,
           itemBuilder: (context, index) {
             final singleExample = widget.examples![index];
-            return ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, singleExample.route!);
-              },
-              title: Text(singleExample.concept!),
+            return Card(
+              elevation: 1,
+              child: ListTile(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    singleExample.route!,
+                  );
+                },
+                title: Text(singleExample.concept!),
+              ),
             );
           }),
     );

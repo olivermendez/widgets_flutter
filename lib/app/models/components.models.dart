@@ -21,6 +21,9 @@ class ComponentsModels {
       image: '${imagePath}appbar_botton.png',
       examples: [
         ExamplesView('style1', '/appbar-buttom-1'),
+        ExamplesView('style2', '/appbar-buttom-1'),
+        ExamplesView('style3', '/appbar-buttom-1'),
+        ExamplesView('style4', '/appbar-buttom-1'),
       ],
     ),
     ComponentsModels(
