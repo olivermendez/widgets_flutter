@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_flutter/app/pages/login_page.dart';
-import 'package:widgets_flutter/app/pages/widget_world.dart';
+import 'package:widgets_flutter/app/pages/home.dart';
 import 'package:widgets_flutter/app/widgets/body/widget_body_01.dart';
 
-import '../app/pages/with_bloc/counter_page.dart';
+import '../app/pages/appbars_bottom/abb1.dart';
 import '../splash/splash_page.dart';
 
 class AppRouter {
@@ -17,10 +17,12 @@ class AppRouter {
         return WidgetBody01.route();
       case LoginPage.routeName:
         return LoginPage.route();
-      case WidgetWordHome.routeName:
-        return WidgetWordHome.route();
-      case CounterPage.routeName:
-        return CounterPage.route();
+      case Home.routeName:
+        return Home.route();
+
+      //Appbar_buttom
+      case AppBarButtom1.routeName:
+        return AppBarButtom1.route();
 
       default:
         return _errorRoute();
