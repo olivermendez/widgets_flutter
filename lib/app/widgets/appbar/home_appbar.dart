@@ -6,18 +6,10 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
       centerTitle: false,
-      leading: IconButton(
-        onPressed: () {
-          // ignore: avoid_print
-          print("menu button");
-        },
-        icon: const Icon(
-          Icons.menu,
-          semanticLabel: 'menu',
-        ),
-      ),
-      elevation: 0,
+      elevation: 3,
       title: const Text(
         "Widget World",
       ),

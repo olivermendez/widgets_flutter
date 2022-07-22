@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_flutter/app/pages/apps/dog_app/dog_home.dart';
+import 'package:widgets_flutter/app/pages/apps/fish_app/fish_watch_home.dart';
 import 'package:widgets_flutter/app/pages/login_page.dart';
 import 'package:widgets_flutter/app/pages/home.dart';
 import 'package:widgets_flutter/app/widgets/body/widget_body_01.dart';
@@ -23,6 +25,13 @@ class AppRouter {
       //Appbar_buttom
       case AppBarButtom1.routeName:
         return AppBarButtom1.route();
+
+      //Apps
+      case FishWatchAppHome.routeName:
+        return FishWatchAppHome.route();
+
+      case DogAppHome.routeName:
+        return DogAppHome.route();
 
       default:
         return _errorRoute();

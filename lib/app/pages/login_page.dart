@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   _usernameController.clear();
                   _passwordController.clear();
-                  Navigator.pushReplacementNamed(context, '/world');
+                  Navigator.pushReplacementNamed(context, '/home');
                 },
                 child: const Text("enter"),
               ),

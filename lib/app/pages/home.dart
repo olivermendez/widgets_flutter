@@ -4,11 +4,12 @@ import 'package:widgets_flutter/app/pages/widgets_home.dart';
 import 'package:widgets_flutter/app/widgets/card_widget.dart';
 
 import '../widgets/appbar/home_appbar.dart';
+import '../widgets/drawer/home_drawer.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
-  static const String routeName = '/world';
+  static const String routeName = '/home';
 
   static Route route() {
     return MaterialPageRoute(
@@ -25,6 +26,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: HomeDrawerWidget(),
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(50),
         child: AppBarWidget(),
