@@ -27,9 +27,9 @@ class _HomeDrawerWidgetState extends State<HomeDrawerWidget> {
             },
           ),
           ListTile(
-            title: const Text('Item 2'),
+            title: const Text('Rent Car'),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.pushNamed(context, '/homev1');
             },
           ),
         ],

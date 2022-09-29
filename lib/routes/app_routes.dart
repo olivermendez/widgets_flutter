@@ -3,6 +3,7 @@ import 'package:widgets_flutter/app/pages/apps/dog_app/dog_home.dart';
 import 'package:widgets_flutter/app/pages/apps/fish_app/fish_watch_home.dart';
 import 'package:widgets_flutter/app/pages/login_page.dart';
 import 'package:widgets_flutter/app/pages/home.dart';
+import 'package:widgets_flutter/app/pages/others/home1.dart';
 import 'package:widgets_flutter/app/widgets/body/widget_body_01.dart';
 
 import '../app/pages/appbars_bottom/abb1.dart';
@@ -21,6 +22,8 @@ class AppRouter {
         return LoginPage.route();
       case Home.routeName:
         return Home.route();
+      case Homev1.routeName:
+        return Homev1.route();
 
       //Appbar_buttom
       case AppBarButtom1.routeName:
