@@ -18,13 +18,12 @@ class _WidgetsHomeState extends State<WidgetsHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        //foregroundColor: Colors.black,
+        elevation: 1,
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.white,
         title: Text(
           widget.title,
-          style: const TextStyle(color: Colors.white),
         ),
-        //backgroundColor: Colors.white,
       ),
       body: ListView.builder(
           itemCount: widget.examples!.length,

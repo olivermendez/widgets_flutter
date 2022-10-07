@@ -15,14 +15,14 @@ class ComponentsModels {
 
   static List<ComponentsModels> componentsData = [
     ComponentsModels(
-      name: 'App bars: botton',
+      name: 'App bars',
       description:
           'A bottom app bar displays navigation and key actions at the bottom of mobile screens.',
       image: '${imagePath}appbar_botton.png',
       examples: [
-        ExamplesView('style1', '/appbar-buttom-1'),
-        ExamplesView('style2', '/appbar-buttom-1'),
-        ExamplesView('style3', '/appbar-buttom-1'),
+        ExamplesView('style1', '/appbar-buttom'),
+        ExamplesView('style2', '/appbar-top'),
+        ExamplesView('style3', '/cu-appbar-top'),
         ExamplesView('style4', '/appbar-buttom-1'),
       ],
     ),

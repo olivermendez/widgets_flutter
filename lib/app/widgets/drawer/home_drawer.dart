@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:widgets_flutter/app/pages/widgets_tut/cupertino/appbar_top.dart';
 
 class HomeDrawerWidget extends StatefulWidget {
   HomeDrawerWidget({Key? key}) : super(key: key);
@@ -29,9 +31,12 @@ class _HomeDrawerWidgetState extends State<HomeDrawerWidget> {
           ListTile(
             title: const Text('Rent Car'),
             onTap: () {
-              Navigator.pushNamed(context, '/homev1');
+              Navigator.pushNamed(context, '/top');
             },
           ),
+          ListTile(
+              title: const Text('Cupertino 1'),
+              onTap: () => Navigator.pushNamed(context, '/cu-appbar-top')),
         ],
       ),
     );

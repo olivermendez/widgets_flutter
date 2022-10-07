@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class AppBarButtom1 extends StatelessWidget {
   const AppBarButtom1({Key? key}) : super(key: key);
 
-  static const String routeName = '/appbar-buttom-1';
+  static const String routeName = '/appbar-buttom';
 
   static Route route() {
     return MaterialPageRoute(
-      settings: RouteSettings(name: routeName),
+      settings: const RouteSettings(name: routeName),
       builder: (_) => const AppBarButtom1(),
     );
   }

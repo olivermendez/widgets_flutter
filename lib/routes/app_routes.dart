@@ -1,16 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:widgets_flutter/app/pages/apps/dog_app/dog_home.dart';
 import 'package:widgets_flutter/app/pages/apps/fish_app/fish_watch_home.dart';
 import 'package:widgets_flutter/app/pages/login_page.dart';
 import 'package:widgets_flutter/app/pages/home.dart';
-import 'package:widgets_flutter/app/pages/others/home1.dart';
+import 'package:widgets_flutter/app/pages/widgets_tut/appbars/appbar_top.dart';
+import 'package:widgets_flutter/app/pages/widgets_tut/cupertino/appbar_top.dart';
+import 'package:widgets_flutter/app/pages/widgets_tut/home1.dart';
 import 'package:widgets_flutter/app/widgets/body/widget_body_01.dart';
 
-import '../app/pages/appbars_bottom/abb1.dart';
+import '../app/pages/widgets_tut/appbars/appbar_button.dart';
 import '../splash/splash_page.dart';
 
 class AppRouter {
-  static Route onGenerateRoute(RouteSettings settings) {
+  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     print('This is route ${settings.name}');
 
     switch (settings.name) {
@@ -24,6 +27,11 @@ class AppRouter {
         return Home.route();
       case Homev1.routeName:
         return Homev1.route();
+      case AppBarTop.routeName:
+        return AppBarTop.route();
+
+      case CupertinoExample.routeName:
+        return CupertinoExample.route();
 
       //Appbar_buttom
       case AppBarButtom1.routeName:

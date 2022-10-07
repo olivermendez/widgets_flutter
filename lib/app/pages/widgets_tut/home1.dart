@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Homev1 extends StatelessWidget {
   const Homev1({super.key});
 
-  static const String routeName = '/homev1';
+  static const String routeName = '/top';
 
   static Route route() {
     return MaterialPageRoute(
@@ -45,7 +45,7 @@ class Homev1 extends StatelessWidget {
         centerTitle: false,
         backgroundColor: Colors.purple,
         title: const Text(
-          "Hi, Oliver",
+          "Home",
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
