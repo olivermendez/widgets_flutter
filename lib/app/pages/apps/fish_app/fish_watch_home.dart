@@ -35,10 +35,13 @@ class _FishWatchAppHomeState extends State<FishWatchAppHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('FISH WATCH FACTS'),
-        backgroundColor: Color.fromARGB(255, 8, 173, 255),
-        foregroundColor: Color.fromARGB(255, 255, 255, 255),
-        elevation: 0,
+        title: const Text(
+          'Fish App',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        elevation: 1,
       ),
       //TODO! REFACTOR
       body: FutureBuilder<List<FishWatchDataResponse>>(
