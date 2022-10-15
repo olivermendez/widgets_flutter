@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_html/style.dart';
 
 class SmartHomeApp extends StatefulWidget {
   const SmartHomeApp({super.key});
@@ -36,7 +34,7 @@ class _SmartHomeAppState extends State<SmartHomeApp> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarWidgetSmartHome(),
+      bottomNavigationBar: const BottomBarWidgetSmartHome(),
     );
   }
 }
@@ -297,7 +295,7 @@ class TypeOfRoomsWidgetSmartHome extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 54,
+            height: 44,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 10,
@@ -321,8 +319,33 @@ class TypeOfRoomsWidgetSmartHome extends StatelessWidget {
   }
 }
 
-class TypeOfDevicesWidgetSmartHome extends StatelessWidget {
+class TypeOfDevicesWidgetSmartHome extends StatefulWidget {
   const TypeOfDevicesWidgetSmartHome({super.key});
+
+  @override
+  State<TypeOfDevicesWidgetSmartHome> createState() =>
+      _TypeOfDevicesWidgetSmartHomeState();
+}
+
+class _TypeOfDevicesWidgetSmartHomeState
+    extends State<TypeOfDevicesWidgetSmartHome> {
+  bool swichState = false;
+  String textValue = 'OFF';
+  void toggleSwitch(bool value) {
+    if (swichState == false) {
+      setState(() {
+        swichState = true;
+        textValue = 'ON';
+      });
+      //print('Switch Button is ON');
+    } else {
+      setState(() {
+        swichState = false;
+        textValue = 'OFF';
+      });
+      //print('Switch Button is OFF');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -360,53 +383,79 @@ class TypeOfDevicesWidgetSmartHome extends StatelessWidget {
               itemCount: 10,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                //mainAxisExtent: 16,
-                mainAxisSpacing: 16,
+                crossAxisSpacing: 10,
+                mainAxisExtent: 200,
+                mainAxisSpacing: 10,
               ),
               itemBuilder: (context, index) {
                 return Container(
+                  decoration: BoxDecoration(
+                    //color: Colors.grey[100],
+                    border: Border.all(color: Colors.black12),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                   padding: const EdgeInsets.all(20),
-                  color: Colors.blue[100],
+                  //color: Colors.grey[100],
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    //mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Icon(Icons.access_alarm),
-                          Icon(Icons.wifi)
-                        ],
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(top: 10.0),
-                      ),
-                      const Text(
-                        "Smart Lighting",
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Icon(Icons.access_alarm),
+                            Icon(Icons.wifi)
+                          ],
                         ),
                       ),
-                      const Text(
-                        "2 Lamps",
-                        style: TextStyle(
-                          color: Colors.grey,
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "Smart Lighting",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              "2 Lamps",
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(bottom: 10.0),
                       ),
                       const Divider(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: const [
-                          Text("On"),
-                          Icon(Icons.wifi_1_bar_outlined),
-                        ],
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(textValue),
+                            Switch(
+                              // thumb color (round icon)
+                              activeColor: Colors.amber,
+                              activeTrackColor: Colors.cyan,
+                              inactiveThumbColor: Colors.blueGrey,
+                              inactiveTrackColor: Colors.grey,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: swichState,
+                              onChanged: toggleSwitch,
+                              // changes the state of the switch
+                              //onChanged: (value) => setState(() => value = false),
+                            ),
+
+                            //Placeholder(),
+                            //Placeholder(),
+                          ],
+                        ),
                       ),
                     ],
                   ),
