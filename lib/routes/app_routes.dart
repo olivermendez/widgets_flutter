@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:widgets_flutter/app/pages/apps/dog_app/dog_home.dart';
 import 'package:widgets_flutter/app/pages/apps/fish_app/fish_watch_home.dart';
+import 'package:widgets_flutter/app/pages/apps/smart_home/smart_home.dart';
 import 'package:widgets_flutter/app/pages/login_page.dart';
 import 'package:widgets_flutter/app/pages/home.dart';
 import 'package:widgets_flutter/app/pages/widgets_tut/appbars/appbar_top.dart';
 import 'package:widgets_flutter/app/pages/widgets_tut/cupertino/appbar_top.dart';
-import 'package:widgets_flutter/app/pages/widgets_tut/home1.dart';
 import 'package:widgets_flutter/app/widgets/body/widget_body_01.dart';
 
 import '../app/pages/widgets_tut/appbars/appbar_button.dart';
@@ -25,10 +24,11 @@ class AppRouter {
         return LoginPage.route();
       case Home.routeName:
         return Home.route();
-      case Homev1.routeName:
-        return Homev1.route();
       case AppBarTop.routeName:
         return AppBarTop.route();
+
+      case SmartHomeApp.routeName:
+        return SmartHomeApp.route();
 
       case CupertinoExample.routeName:
         return CupertinoExample.route();

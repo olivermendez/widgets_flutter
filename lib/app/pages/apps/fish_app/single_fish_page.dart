@@ -25,9 +25,13 @@ class _SingleFishPageState extends State<SingleFishPage> {
       ),
       body: ListView(
         children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0, top: 10),
+            child: Text("Scientific Name: ${widget.specie.speciesName}"),
+          ),
           //ImageScrollWidget(images: widget.specie.speciesIllustrationPhoto!.)
           Image.network(widget.specie.speciesIllustrationPhoto!.src.toString()),
-          Divider(),
+          const Divider(),
           /*
           Row(
             //mainAxisAlignment: MainAxisAlignment.end,

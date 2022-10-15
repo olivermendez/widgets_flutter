@@ -37,6 +37,9 @@ class _HomeDrawerWidgetState extends State<HomeDrawerWidget> {
           ListTile(
               title: const Text('Cupertino 1'),
               onTap: () => Navigator.pushNamed(context, '/cu-appbar-top')),
+          ListTile(
+              title: const Text('Smart Home'),
+              onTap: () => Navigator.pushNamed(context, '/smart-app')),
         ],
       ),
     );
